@@ -14,7 +14,9 @@ export class DetaillehotelComponent implements OnInit {
 allimages:any ;
 id = this.route.snapshot.params['id'] ;
 hotel:any ;
-addreservform:FormGroup ;
+addreservform: FormGroup = new FormGroup({});
+
+//addreservform:FormGroup ;
 chambreliste:any ;
 currentuser : any  ;
 currentuseItem = localStorage.getItem('currentuser') ;
@@ -23,7 +25,7 @@ reservation:any ;
 selectedtarif:any ; 
 chambrebyid:any ; 
   constructor(private hotelservice:HotelserviceService , private reservservice:ReservationserviceService  , private router:Router  , private fb:FormBuilder ,  private chambreservice:ChambreserviceService,   private route:ActivatedRoute ) {
-    this.status = JSON.parse(this.status) ;
+    this.status = JSON.parse(this.status!) ;
     this.currentuser = this.currentuseItem !=null? JSON.parse(this.currentuseItem) : null;
     
     

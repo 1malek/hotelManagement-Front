@@ -14,7 +14,8 @@ export class ListetablerestoComponent implements OnInit {
   idresto = this.route.snapshot.params['id'] ;
   alltable:any ;
   idtable:any ;
-  createform:FormGroup  ;
+  //createform:FormGroup  ;
+  createform: FormGroup = new FormGroup({});
   currentuser : any  ;
   currentuseItem = localStorage.getItem('currentuser') ;
   nomtable:any ;
@@ -40,7 +41,7 @@ export class ListetablerestoComponent implements OnInit {
  })
   }
 
-  gettableid(f){
+  gettableid(f:any){
     this.idtable = f.id ;
     this.nomtable = f.nom  ;
   }

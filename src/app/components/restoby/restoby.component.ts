@@ -17,7 +17,7 @@ export class RestobyComponent implements OnInit {
   restaurantlist:any ;
   cuisine:any ;
   constructor(private route:ActivatedRoute , private restoservice:RestoserviceService) {
-         this.status = JSON.parse(this.status) ;
+         this.status = JSON.parse(this.status!) ;
     this.currentuser = this.currentuseItem !=null? JSON.parse(this.currentuseItem) : null;
 
 

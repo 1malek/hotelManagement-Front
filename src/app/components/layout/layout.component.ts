@@ -11,12 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
   currentuser : any  ;
-currentuseItem = localStorage.getItem('currentuser') ;
-status = JSON.parse(  localStorage.getItem('status')) ;
+  currentuseItem = localStorage.getItem('currentuser');
+  status: string | null = localStorage.getItem('status');;
 allresto:any ;
 
   constructor(private restoservice:RestoserviceService , private router:Router) {
-    this.status = JSON.parse(this.status) ;
+    this.status = this.status ? JSON.parse(this.status) : null;
     this.currentuser = this.currentuseItem !=null? JSON.parse(this.currentuseItem) : null;
 
    }

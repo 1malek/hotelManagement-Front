@@ -16,7 +16,7 @@ export class RestobyambianceComponent implements OnInit {
   status = localStorage.getItem('status') ;
   constructor(private route:ActivatedRoute
      , private restoservice:RestoserviceService) {
-      this.status = JSON.parse(this.status) ;
+      this.status = JSON.parse(this.status!) ;
       this.currentuser = this.currentuseItem !=null? JSON.parse(this.currentuseItem) : null;
 
       this.route.queryParams.subscribe(params => {

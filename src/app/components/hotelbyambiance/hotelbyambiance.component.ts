@@ -27,7 +27,7 @@ export class HotelbyambianceComponent implements OnInit {
       this.allhotels = data;
 
 
-      this.allhotels.forEach(hotel => {
+      this.allhotels.forEach((hotel :any)=> {
         this.hotelservice.getoneimage(hotel.id).subscribe((imageData) => {
           this.imagetable = imageData;
 

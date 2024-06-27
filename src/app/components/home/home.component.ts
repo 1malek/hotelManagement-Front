@@ -7,6 +7,8 @@ import { HotelserviceService } from 'src/app/services/hotelservice.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
+  
   currentuser : any  ;
   currentuseItem = localStorage.getItem('currentuser') ;
   status = localStorage.getItem('status') ;
@@ -14,7 +16,7 @@ export class HomeComponent implements OnInit {
   imagetable:any ;
   listevrai:any ;
   constructor(private hotelsservice:HotelserviceService) {
-    this.status = JSON.parse(this.status) ;
+    this.status = JSON.parse(this.status!) ;
     this.currentuser = this.currentuseItem !=null? JSON.parse(this.currentuseItem) : null;
    }
 
@@ -30,7 +32,7 @@ export class HomeComponent implements OnInit {
       
       this.listevrai = this.listehotels.slice(0, 7);
   
-      this.listevrai.forEach((hotel) => {
+      this.listevrai.forEach((hotel:any) => {
         this.hotelsservice.getoneimage(hotel.id).subscribe((imageData) => {
           hotel.imagetable = imageData;
   

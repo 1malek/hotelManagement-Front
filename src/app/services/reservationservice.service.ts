@@ -18,7 +18,7 @@ export class ReservationserviceService {
     return this.http.get(`${environment.BasedUrl}/reservresto/availabletables/${idresto}` ) ;
   }
 
-  createhotelreservation(idclient:any , idchambre:any , idhotel:any , reservation )
+  createhotelreservation(idclient:any , idchambre:any , idhotel:any , reservation:any )
   {
     return this.http.post(`${environment.BasedUrl}/reservChambre/create/${idclient}/${idchambre}/${idhotel}` , reservation) ;
 

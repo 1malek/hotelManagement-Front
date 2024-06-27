@@ -11,15 +11,15 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-signupform:FormGroup ;
-loginform:FormGroup ;
+  signupform: FormGroup = new FormGroup({});
+  loginform: FormGroup = new FormGroup({});
 client:any;
 currentuser : any  ;
 currentuseItem = localStorage.getItem('currentuser') ;
 status = localStorage.getItem('status') ;
   constructor(private fb:FormBuilder , private authservice:AuthserviceService , private router:Router) {
 
-    this.status = JSON.parse(this.status) ;
+    this.status = JSON.parse(this.status!) ;
     this.currentuser = this.currentuseItem !=null? JSON.parse(this.currentuseItem) : null;
   }
 
