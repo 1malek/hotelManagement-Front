@@ -1,0 +1,172 @@
+<html class="no-js"><!--<![endif]-->
+
+<body style="overflow: visible;">
+
+
+
+  <!-- End page header -->
+
+  <!-- property area -->
+  <div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
+    <div class="container">
+
+        <div class="clearfix padding-top-40" >
+
+            <div class="col-md-8 single-property-content prp-style-1 ">
+                <div class="row">
+                    <div class="light-slide-item">
+                        <div class="clearfix">
+                            <div class="favorite-and-print">
+                                <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                    <i class="fa fa-star-o"></i>
+                                </a>
+                                <a class="printer-icon " href="javascript:window.print()">
+                                    <i class="fa fa-print"></i>
+                                </a>
+                            </div>
+
+                            <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+
+                                <li   *ngFor="let i of allimages">
+                                  <img src="http://localhost:8081/restaurant/files/{{i.image}}" />
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-property-wrapper">
+                    <div class="single-property-header">
+                        <h1 class="property-title pull-left">{{hotel.libelle}}</h1>
+                        <span class="property-price pull-right">{{hotel.tarif}}</span>
+                    </div>
+
+                    <div class="property-meta entry-meta clearfix ">
+
+
+
+                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
+                            <span class="property-info icon-area">
+                                <img src="assets/img/icon/room-orange.png">
+                            </span>
+                            <span class="property-info-entry">
+                                <span class="property-info-label">Capacite</span>
+                                <span class="property-info-value">{{hotel.capacite}}</span>
+                            </span>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
+                            <span class="property-info-icon icon-bed">
+                                <img src="assets/img/icon/bed-orange.png">
+                            </span>
+                            <span class="property-info-entry">
+                                <span class="property-info-label">Nombre Etoile</span>
+                                <span class="property-info-value">{{hotel.nb_etoile}}</span>
+                            </span>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
+                          <span class="property-info icon-area">
+                                <img src="assets/img/icon/cars-orange.png">
+                            </span>
+                            <span class="property-info-entry">
+                                <span class="property-info-label">Ambiance</span>
+                                <span class="property-info-value">{{hotel.ambiance}}</span>
+                            </span>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <!-- End video area  -->
+
+                </div>
+            </div>
+
+
+            <div class="col-md-4 p0">
+                <aside class="sidebar sidebar-property blog-asside-right">
+
+                    <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Passer Votre Réservation</h3>
+                        </div>
+                        <div class="panel-body search-widget">
+                            <form action="" [formGroup]="addreservform"  class=" form-inline">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <input type="date" formControlName="datedebut" class="form-control" placeholder="DateDebut">
+                                        </div>
+                                        <div style="color:red;" *ngIf="addreservform.get('datedebut')?.hasError('required') && addreservform.get('datedebut')?.touched" class="alert alert-danger">
+                                          date debut is required
+
+                                                         </div>
+                                        <br> <hr>
+                                        <div class="col-xs-12">
+                                          <input type="date" class="form-control" formControlName="datefin" placeholder="Datefin">
+                                      </div>
+                                      <div style="color:red;" *ngIf="addreservform.get('datefin')?.hasError('required') && addreservform.get('datefin')?.touched" class="alert alert-danger">
+                                        date fin is required
+
+                                                       </div> <br> <hr>
+                                      <div class="col-xs-12">
+                                        <input type="int" class="form-control"  formControlName="dureesejour"  placeholder="Duree séjour">
+                                    </div>
+                                    <div style="color:red;" *ngIf="addreservform.get('dureesejour')?.hasError('required') && addreservform.get('dureesejour')?.touched" class="alert alert-danger">
+                                      duree sejour is required
+
+                                                     </div>
+                                    <br> <hr>
+
+                                    <div class="col-xs-12">
+                                      <input type="int" class="form-control"  formControlName="nbpersonne" placeholder="Nombre Personne">
+                                  </div>
+                                  <div style="color:red;" *ngIf="addreservform.get('nbpersonne')?.hasError('required') && addreservform.get('nbpersonne')?.touched" class="alert alert-danger">
+                                    Nombre Personne is required
+
+                                                   </div>
+                                  <br> <hr>
+                                  <div class="col-xs-12">
+                                    <input type="int" class="form-control"  formControlName="nbchambre" placeholder="Nombre Chambre">
+                                </div>
+                                <div style="color:red;" *ngIf="addreservform.get('nbchambre')?.hasError('required') && addreservform.get('nbchambre')?.touched" class="alert alert-danger">
+                                  Nombre chmabre is required
+
+                                                 </div>
+                                <br><hr>
+
+   <select formControlName="idchambre"   class="form-control"  style="width: 349px; margin-left: 17px;">
+  <option value="">--Choisir Type de chambre--</option>
+  <option *ngFor="let c of chambreliste" [value]="c.id"  >{{c.typelogement}}  {{c.tarif}}</option>
+
+     </select>
+ 
+
+       <button  *ngIf="status=='1'"   class="navbar-btn nav-button wow bounceInRight login"  style="width: 22pc;    margin-left: 15px;" (click)="reserver()">Passer Une Réservation</button>
+
+        <button *ngIf="status== '0'|| status ==null"  class="navbar-btn nav-button wow bounceInRight login"  style="width: 22pc;    margin-left: 15px;" routerLink="/login">S'authentifier Pour Réserver</button>
+                                    </div>
+                                </fieldset>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</body></html>

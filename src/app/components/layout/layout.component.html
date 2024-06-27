@@ -1,0 +1,247 @@
+
+<!-- Body content -->
+
+<div class="header-connect">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5 col-sm-8  col-xs-12">
+              <div class="header-half header-call">
+                  <p>
+                      <span><i class="pe-7s-call"></i> +216 21 255 046</span>
+                      <span><i class="pe-7s-mail"></i> RezHotelResto@gmail.com</span>
+                  </p>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+<!--End top header -->
+
+<nav class="navbar navbar-default ">
+  <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" routerLink=""><img src="assets/img/logoo.png" style="width: 127px;    margin-top: -16px;" alt=""></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse yamm" id="navigation">
+          <div class="button navbar-right">
+              <button class="navbar-btn nav-button wow bounceInRight login"  *ngIf="status=='0' || status ==null" routerLink="/login">Login</button>
+              <button class="navbar-btn nav-button wow fadeInRight" (click)="Logout()"  *ngIf="status=='1'"  >Logout</button>
+          </div>
+          <ul class="main-nav nav navbar-nav navbar-right">
+
+
+              <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" routerLink="/">Home</a></li>
+
+
+              <li class="dropdown yamm-fw" data-wow-delay="0.4s">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> Restaurant <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="yamm-content">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h5>Ambiance</h5>
+                                    <ul>
+
+                                        <li >
+                                            <a [routerLink]="['/restobyambiance']" [queryParams]="{ ambiance: 'romantique' }">Romantique</a>
+                       <a [routerLink]="['/restobyambiance']" [queryParams]="{ ambiance: 'lounge' }">Lounge</a>
+                      <a [routerLink]="['/restobyambiance']" [queryParams]="{ ambiance: 'bord de mer' }">Bord De Mer</a>
+                      <a [routerLink]="['/restobyambiance']" [queryParams]="{ ambiance: 'familial' }">Familial</a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-3">
+                                    <h5>Type Cuisine</h5>
+                                    <ul>
+                                      <li >
+
+                                        <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'tunisienne' }">Tunisienne</a>
+                                        <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'asiatique' }">Asiatique</a>
+                                       <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'traditionnel' }">Traditionnel</a>
+                                       <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'variee' }">Variée</a>
+
+
+
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- /.yamm-content -->
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown yamm-fw" data-wow-delay="0.4s">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> Hotel <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li>
+                      <div class="yamm-content">
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h5>Ambiance</h5>
+                                  <ul>
+                                      <li>
+                                        <a [routerLink]="['/hotelbyambiance']" [queryParams]="{ ambiance: 'piscine' }">Piscine</a>
+                                      </li>
+                                      <li>
+                                        <a [routerLink]="['/hotelbyambiance']" [queryParams]="{ ambiance: 'evenement' }">Evenement</a>
+                                      </li>
+                                      <li>
+                                        <a [routerLink]="['/hotelbyambiance']" [queryParams]="{ ambiance: 'au vert' }">AU vert</a>
+                                      </li>
+                                      <li>
+                                        <a [routerLink]="['/hotelbyambiance']" [queryParams]="{ ambiance: 'lounge' }">Lounge</a>
+                                      </li>
+
+                                  </ul>
+                              </div>
+                              <div class="col-sm-3">
+                                  <h5>Nombre d'etoile</h5>
+                                  <ul>
+                                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 1 }">1er étoile</a></li>
+                                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 2 }">2eme étoile</a></li>
+                                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 3 }">3eme étoile</a>  </li>
+                                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 4 }">4eme étoile</a> </li>
+                                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 5 }">5eme étoile</a> </li>
+
+
+                                  </ul>
+                              </div>
+
+                          </div>
+                      </div>
+                      <!-- /.yamm-content -->
+                  </li>
+              </ul>
+          </li>
+
+          <li class="dropdown ymm-sw" data-wow-delay="0.1s">
+            <a  class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Hotels <b class="caret"></b></a>
+            <ul class="dropdown-menu navbar-nav">
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'bizerte' }">Bizerte</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'mahdia' }">Mahdia</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'sousse' }">Sousse</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'hammamet' }">Hammamet</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'djerba' }">Djerba </a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'nabeul' }">Nabeul</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'tabarka' }">Tabarka</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'Tozeur' }">Tozeur</a> </li>
+              <li>                      <a [routerLink]="['/byadresse']" [queryParams]="{ ambiance: 'Monastir' }">Monastir</a> </li>
+            </ul>
+        </li>
+
+        <li class="dropdown ymm-sw" data-wow-delay="0.1s">
+          <a  class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Restaurants <b class="caret"></b></a>
+          <ul class="dropdown-menu navbar-nav">
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'bizerte' }">Bizerte</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'mahdia' }">Mahdia</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'sousse' }">Sousse</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'hammamet' }">Hammamet</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'djerba' }">Djerba </a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'nabeul' }">Nabeul</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'tabarka' }">Tabarka</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'Tozeur' }">Tozeur</a> </li>
+            <li>                      <a [routerLink]="['/restobyadresse']" [queryParams]="{ ambiance: 'Monastir' }">Monastir</a> </li>
+          </ul>
+      </li>
+
+
+      <li class="dropdown ymm-sw" data-wow-delay="0.1s"   *ngIf="status=='1'" >
+        <a  class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Liste Réservation <b class="caret"></b></a>
+        <ul class="dropdown-menu navbar-nav">
+          <li>                      <a routerLink="/listereservationH">Réservation Hotel</a> </li>
+          <li>                      <a  routerLink="/listereservresto">Réservation Restaurant</a> </li>
+       
+        </ul>
+    </li>
+  
+
+
+
+          </ul>
+      </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- End of nav bar -->
+<router-outlet></router-outlet>
+
+<!-- Footer area-->
+<div class="footer-area">
+
+  <div class=" footer">
+      <div class="container">
+          <div class="row">
+
+              <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                  <div class="single-footer">
+                      <h4>A Propos de Nous </h4>
+                      <div class="footer-title-line"></div>
+
+
+                      <p>Nous Vous offre les liste des meilleurs hotels et des restaurant</p>
+                      <ul class="footer-adress">
+                          <li><i class="pe-7s-map-marker strong"> </i> Tunis</li>
+                          <li><i class="pe-7s-mail strong"> </i> REZHOTELRESTO@gmail.com</li>
+                          <li><i class="pe-7s-call strong"> </i> +216 21 255 046 </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                  <div class="single-footer">
+                      <h4>Nos Restaurant </h4>
+                      <div class="footer-title-line"></div>
+                      <ul class="footer-menu">
+                          <li>              <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'tunisienne' }">Tunisienne</a> </li>
+                          <li>                                        <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'asiatique' }">Asiatique</a>  </li>
+                          <li>                                       <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'traditionnel' }">Traditionnel</a></li>
+                          <li>            <a [routerLink]="['/restobycuisine']" [queryParams]="{ cuisine: 'variee' }">Variée</a></li>
+
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                <div class="single-footer">
+                    <h4>Nos Hotels </h4>
+                    <div class="footer-title-line"></div>
+                    <ul class="footer-menu">
+                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 1 }">1er étoile</a></li>
+                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 2 }">2eme étoile</a></li>
+                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 3 }">3eme étoile</a>  </li>
+                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 4 }">4eme étoile</a> </li>
+                      <li>                      <a [routerLink]="['/hotelbyetoile']" [queryParams]="{ ambiance: 5 }">5eme étoile</a> </li>
+
+                    </ul>
+                </div>
+            </div>
+              <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                  <div class="single-footer news-letter">
+                      <h4>Rester En Contact</h4>
+                      <div class="footer-title-line"></div>
+                      <p>Pour Plus d'informations Nous Contactez sur notre télephone ou bien par Email</p>
+
+
+
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+
+</div>

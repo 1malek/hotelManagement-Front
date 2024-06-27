@@ -1,0 +1,47 @@
+<body style="overflow: visible;">
+
+
+
+
+  <!-- property area -->
+  <div class="properties-area recent-property" style="background-color: #FFF;">
+      <div class="container">
+          <div class="row  pr0 padding-top-40 properties-page">
+
+
+              <div class="col-md-12 clear ">
+                  <div id="list-type" class="proerty-th">
+                      <div class="col-sm-6 col-md-3 p0"  *ngFor="let h of allhotels">
+                          <div class="box-two proerty-item">
+                              <div class="item-thumb">
+                                  <a routerLink="/detaillehotel/{{h.id}}"><img src="http://localhost:8081/restaurant/files/{{  imagetable.image     }}"></a>
+                              </div>
+                              <div class="item-entry overflow">
+                                  <h5><a href="property-1.html"> {{h.libelle}} </a></h5>
+                                  <div class="dot-hr"></div>
+                                  <span class="pull-left"><b> Adresse :</b> {{h.adresse}} </span>
+                                  <span class="proerty-price pull-right">$ {{h.tarif}}</span>
+
+                                  <div class="property-icon">
+                                      <img src="assets/img/icon/bed.png">(5)|
+                                      <img src="assets/img/icon/shawer.png">(2)|
+                                      <img src="assets/img/icon/cars.png">(1)
+                                  </div>
+                              </div>
+
+
+                          </div>
+                      </div>
+
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+
+
+
+</body>

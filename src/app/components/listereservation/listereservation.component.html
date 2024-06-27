@@ -1,0 +1,43 @@
+<br><br>
+<div class="card" style="width: 900px;
+margin-left: 241px;">
+  <div class="card-header">
+      <h6 class="card-title">Liste Des Réservations Hotel</h6>
+  </div>
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table table-hover align-middle">
+              <thead>
+                  <tr>
+                      <th>Date Debut</th>
+                      <th>Date fin</th>
+                      <th>Durée de Séjour</th>
+                      <th>Nombre personnes</th>
+                      <th>Nombre du chambre</th>
+                      <th>Prix</th>
+                      <th></th>
+                
+          
+
+                  </tr>
+              </thead>
+              <tbody>
+
+                  <tr   *ngFor="let r of allhotels">
+                    <td>{{r.datedebut}}</td>
+                      <td>{{r.datefin}}</td>
+                      <td>{{r.dureesejour}}</td>
+                      <td>{{r.nbpersonne}}</td>
+                      <td>{{r.nbchambre}}</td>
+                      <th>{{r.somme}}</th>
+                       <th>    <button     class="navbar-btn nav-button wow bounceInRight login" routerLink="/facture/{{r.id}}"  style="width: 22pc;    margin-left: 15px;">Facture</button></th>
+        <td></td>
+
+
+                  </tr>
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

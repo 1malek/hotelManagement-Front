@@ -1,0 +1,74 @@
+<div class="content-area recent-property" style="background-color: #FFF;">
+  <div class="container">
+      <div class="row">
+
+          <div class="col-md-9 pr-30 padding-top-40 properties-page user-properties">
+
+
+
+              <div class="section">
+                  <div id="list-type" class="proerty-th-list">
+                      <div class="col-md-4 p0"  *ngFor="let r of listresto">
+                          <div class="box-two proerty-item">
+                              <div class="item-thumb">
+                                  <a href="property-1.html"><img src="http://localhost:8081/restaurant/files/{{
+                                    r.photomenu
+                  }}"></a>
+                              </div>
+                              <div class="item-entry overflow">
+                                  <h5><a href="property-1.html"> {{r.libelle}} </a></h5>
+                                  <div class="dot-hr"></div>
+                                  <span class="pull-left"><b> Adresse:</b> {{r.adresse}} </span> <br>
+                                  <span class="pull-left"><b> Heure Ouvert:</b> {{r.heureouvert}} </span> <br>
+                                  <span class="pull-left"><b> Ouvert Ferme:</b> {{r.heureclosed}} </span><br>
+
+
+
+                                  <div class="property-icon"   style=" height: 39px;">
+
+
+                                      <div class="dealer-action pull-right">
+
+                                          <a   *ngIf="status=='1'"  routerLink="/listetable/{{r.id}}" class="button delete_user_car">Passer Une Réservation</a>
+                                          <a  *ngIf="status== '0'|| status ==null"  routerLink="/login" class="button delete_user_car">S'authentifier pour passer une Réservation</a>
+
+                                      </div>
+                                  </div>
+
+
+                              </div>
+                          </div>
+                      </div>
+
+
+                  </div>
+              </div>
+
+
+
+          </div>
+
+          <div class="col-md-3 p0 padding-top-40">
+              <div class="blog-asside-right">
+                  <div class="panel panel-default sidebar-menu wow fadeInRight animated animated" style="visibility: visible; animation-name: fadeInRight;">
+                      <div class="panel-heading">
+                          <h3 class="panel-title">REZHOTELRESTO</h3>
+                      </div>
+                      <div class="panel-body search-widget">
+
+                      </div>
+                  </div>
+
+                  <div class="panel panel-default sidebar-menu wow fadeInRight animated animated" style="visibility: visible; animation-name: fadeInRight;">
+                      <div class="panel-heading">
+                          <h3 class="panel-title">Vous assure des restaurants les plus recommandé</h3>
+                      </div>
+                      <div class="panel-body recent-property-widget">
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

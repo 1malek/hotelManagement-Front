@@ -1,0 +1,93 @@
+   <!-- register-area -->
+   <div class="register-area" style="background-color: rgb(249, 249, 249);">
+    <div class="container">
+
+        <div class="col-md-6">
+            <div class="box-for overflow">
+                <div class="col-md-12 col-xs-12 register-blocks">
+                    <h2>Nouveau Compte : </h2>
+                    <form action=""[formGroup]="signupform"  (ngSubmit)="signup()" >
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" formControlName="nom" class="form-control" id="name">
+                        </div>
+                        <div style="color:red;" *ngIf="signupform.get('nom')?.hasError('required') && signupform.get('nom')?.touched" class="alert alert-danger">
+                          Nom is required
+
+                                         </div>
+                        <div class="form-group">
+                          <label for="name">Prenom</label>
+                          <input type="text" formControlName="prenom" class="form-control" id="name">
+                      </div>
+                      <div style="color:red;" *ngIf="signupform.get('prenom')?.hasError('required') && signupform.get('prenom')?.touched" class="alert alert-danger">
+                        Prenom is required
+
+                                       </div>
+                      <div class="form-group">
+                        <label for="name">Telephone</label>
+                        <input type="number" formControlName="telephone" class="form-control" id="name">
+                    </div>
+                    <div style="color:red;" *ngIf="signupform.get('telephone')?.hasError('required') && signupform.get('telephone')?.touched" class="alert alert-danger">
+                      Telephone is required
+
+                                     </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text"  formControlName="email" class="form-control" id="email">
+                        </div>
+                        <div style="color:red;" *ngIf="signupform.get('email')?.hasError('required') && signupform.get('email')?.touched" class="alert alert-danger">
+                          Email is required
+
+                                         </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" formControlName="motpasse" class="form-control" id="password">
+                        </div>
+                        <div style="color:red;" *ngIf="signupform.get('motpasse')?.hasError('required') && signupform.get('motpasse')?.touched" class="alert alert-danger">
+                          Mot de Passe is required
+
+                                         </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-default">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="box-for overflow">
+                <div class="col-md-12 col-xs-12 login-blocks">
+                    <h2>S'authentifier : </h2>
+                    <form action="" [formGroup]="loginform" (ngSubmit)="login()" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" formControlName="email" class="form-control" id="email">
+                        </div>
+                        <div style="color:red;" *ngIf="loginform.get('email')?.hasError('required') && loginform.get('email')?.touched" class="alert alert-danger">
+                          Email is required
+
+                                         </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" formControlName="motpasse" class="form-control" id="password">
+                        </div>
+                        <div style="color:red;" *ngIf="loginform.get('motpasse')?.hasError('required') && loginform.get('motpasse')?.touched" class="alert alert-danger">
+                          Mot de Passe is required
+
+                                         </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-default"> S'authentifier</button>
+                        </div>
+                    </form>
+                    <br>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

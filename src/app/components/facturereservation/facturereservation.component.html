@@ -1,0 +1,71 @@
+<head>
+
+</head>
+<body>
+
+  <!-- Main Wrapper -->
+  <div class="main-wrapper">
+    <br>
+    <button  style="    margin-left: 1087px;width: 166px;" (click)="openPDF()"   type="button" class="btn btn-primary">Télecharger en PDF  </button>
+    <br>
+    <!-- Page Content -->
+    <div >
+    <div class="content" style="min-height: 253.6px;"  >
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2" style="    margin-left: 262px;">
+            <div class="invoice-content" id="htmlData">
+              <div class="invoice-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="invoice-logo">
+                      <img src="assets/img/logoo.png" style="    width: 168px;" alt="logo">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <hr>
+<br>
+<br>
+
+
+              <p class="invoice-details">
+                <strong> Nom du Client :</strong>{{reservation.clientreserv.nom}} {{reservation.clientreserv.prenom}} <br> <br>
+                <strong> Nom du L'hotel :</strong>{{reservation.hotel.libelle}} <br> <br>
+                <strong> Date Debut :</strong>{{reservation.datedebut}} <br> <br>
+                <strong> Date Fin :</strong>  {{reservation.datefin}}  <br> <br>
+                <strong>  Durée Séjour </strong>   {{reservation.dureesejour}}  <br><br>
+                <strong> Nombre de Personne :  </strong>   {{reservation.nbpersonne}}  <br> <br>
+                <strong>  Nombre de Chambre :   </strong>     {{reservation.nbchambre}}   <br> <br>
+                <strong>  Total :   </strong>     {{reservation.somme}}   <br> <br>
+              </p>
+
+
+
+              <!-- Invoice Information -->
+              <!-- <div class="other-info">
+                <h4 style="    margin-left: 666px;">الموضوع</h4>
+                <p class="text-muted mb-0">aaa</p>
+              </div> -->
+
+              <!-- /Invoice Information -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+    <!-- /Page Content -->
+<hr>
+
+    <button  style="    margin-left: 711px;width: 166px;" routerLink="/paiement"   type="button" class="btn btn-primary">Passer Le Paiement  </button>
+<br><hr>
+  </div>
+
+
+</body><!-- doccure/invoice-view.html  30 Nov 2019 04:12:20 GMT -->
